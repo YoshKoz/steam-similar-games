@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Steam Similar Games</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Steam Similar Games Finder</h1>
+    <p class="sub">Enter a game name or Steam App ID and see games sharing its top tags.</p>
+
+    <div class="search">
+      <input id="appid" type="text" placeholder="Game name or App ID, e.g. RimWorld or 294100" />
+      <button id="go">Find</button>
+    </div>
+
+    <div id="status"></div>
+
+    <div id="source" class="game-card hidden"></div>
+
+    <div id="tagbar" class="tagbar hidden"></div>
+
+    <div id="add-tag" class="add-tag hidden">
+      <input id="tag-input" type="text" placeholder="Add a tag, e.g. Roguelike" />
+      <button id="tag-add-btn">Add tag</button>
+    </div>
+
+    <div id="filters" class="filters hidden">
+      <label><input type="checkbox" id="f-win" checked> Windows</label>
+      <label><input type="checkbox" id="f-mac"> Mac</label>
+      <label><input type="checkbox" id="f-linux"> Linux</label>
+      <label><input type="checkbox" id="f-free"> Free to play only</label>
+      <label>Max price <input type="number" id="f-maxprice" min="0" step="1" placeholder="any" /></label>
+    </div>
+
+    <div id="results" class="results"></div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>

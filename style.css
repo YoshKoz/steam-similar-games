@@ -1,0 +1,277 @@
+:root {
+  --bg: #0e1420;
+  --panel: #17202f;
+  --border: #2a3648;
+  --text: #e6ecf5;
+  --sub: #8c9bb3;
+  --accent: #5aa9ff;
+  --tag-bg: #1e2c40;
+  --tag-active: #5aa9ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.sub {
+  color: var(--sub);
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#appid {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 15px;
+}
+
+#go {
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #06121f;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#go:hover { filter: brightness(1.1); }
+
+#status {
+  min-height: 20px;
+  color: var(--sub);
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.hidden { display: none !important; }
+
+.game-card {
+  display: flex;
+  gap: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.game-card img {
+  width: 184px;
+  height: 69px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.game-card .info h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.game-card .info .meta {
+  color: var(--sub);
+  font-size: 13px;
+}
+
+.tagbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+}
+
+.tag-pill.active {
+  background: var(--tag-active);
+  color: #06121f;
+  border-color: var(--tag-active);
+  font-weight: 600;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-pill .tag-remove {
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.tag-pill .tag-remove:hover {
+  opacity: 1;
+}
+
+.add-tag {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.add-tag input {
+  flex: 1;
+  max-width: 260px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.add-tag button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--tag-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-tag button:hover {
+  border-color: var(--accent);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--sub);
+}
+
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.filters input[type="number"] {
+  width: 64px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.result-row .matched-tags {
+  color: var(--sub);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.result-row .name-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.result-row .price {
+  color: var(--sub);
+  font-size: 13px;
+  flex-shrink: 0;
+  width: 54px;
+  text-align: right;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.result-row .rank {
+  color: var(--sub);
+  font-size: 13px;
+  width: 24px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.result-row .name {
+  flex: 1;
+  font-size: 15px;
+}
+
+.result-row a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.result-row a:hover {
+  color: var(--accent);
+}
+
+.result-row .overlap {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.error {
+  color: #ff8080;
+}
+
+.match-pick {
+  cursor: pointer;
+}
+
+.match-pick:hover {
+  border-color: var(--accent);
+}
